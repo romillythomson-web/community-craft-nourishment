@@ -44,6 +44,26 @@
       text-transform: uppercase;
     }
 
+    /* ABOUT link — top left corner. Opens the "about" template below. */
+    .about-link {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 10;
+      padding: 0;
+      background: none;
+      border: none;
+      color: var(--ink);
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .about-link:hover,
+    .about-link:focus-visible { color: var(--pin-hover); }
+
     /* ============================================================
        TITLE + SUBTITLE — top right corner
        - LOCATION: change `top` / `right` on `.heading` to move both.
@@ -285,6 +305,14 @@
       color: #1f1f1f;
     }
 
+    /* Links inside the story text — underlined so they read as links */
+    .panel p a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .panel p a:hover { color: var(--pin-hover); }
+
     /* The stories live in hidden <template> tags; this keeps them out of sight */
     .story { display: none; }
 
@@ -296,6 +324,8 @@
   </style>
 </head>
 <body>
+  <button class="about-link" id="about-link">About</button>
+
   <div class="heading">
     <h1 class="title">community, craft, and nourishment</h1>
     <p class="place">in Havnebyen, Sjællands Odde</p>
@@ -349,6 +379,20 @@
        To add a silent looping video: <video src="videos/yourfile.mp4" autoplay muted loop playsinline></video>
        To add an image: <img src="images/yourfile.jpg" alt="...">
        ============================================================ -->
+  <template id="about">
+    <svg class="wisp" aria-hidden="true"><path/></svg>
+    <h2>About</h2>
+    <p class="job">The project</p>
+
+    <img src="images/intro/rom_holder.jpg" alt="Romilly Thomson sitting on a beach at sunset">
+
+    <p>Romilly Thomson is a Brown University undergraduate who embarked on this project in the summer of 2025 through the <a href="https://swearer.brown.edu/students/fellowships-programs/edward-guiliano-72-global-undergraduate-fellowship" target="_blank" rel="noopener">Edward Guiliano Global Fellowship</a>. She traveled to Denmark to study small-scale sustainable food practices, and ended up coming away with a much broader appreciation for local heritage and craft — from which food and farming is inseparable.</p>
+
+    <img src="images/intro/waterandboat_web.jpg" alt="A small fishing boat on the water off Sjællands Odde, seen past a fishing rod">
+
+    <p>This project would not have been possible without the generosity and warmth of the folks in Sjællands Odde, especially Matthew, Peter, Rikke, and Linda.</p>
+  </template>
+
   <template id="rikke">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>Rikke</h2>
@@ -619,6 +663,7 @@
       });
     });
 
+    document.getElementById('about-link').addEventListener('click', () => openStory('about'));
     document.getElementById('panel-close').addEventListener('click', closeStory);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeStory(); });
   </script>
