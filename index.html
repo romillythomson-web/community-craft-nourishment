@@ -136,22 +136,22 @@
     .pin .ring {
       fill: none;
       stroke: var(--pin);
-      stroke-width: 1.5;
+      stroke-width: 2;
       transition: stroke 0.2s ease;
     }
 
     .pin text {
       fill: var(--ink);
       font-family: sans-serif;
-      font-size: 18px;
+      font-size: 26px;
       paint-order: stroke;
       stroke: var(--paper);
-      stroke-width: 5px;
+      stroke-width: 6px;
       transition: fill 0.2s ease;
     }
 
     .pin:hover circle,
-    .pin:focus-visible circle { fill: var(--pin-hover); r: 13; }
+    .pin:focus-visible circle { fill: var(--pin-hover); r: 18; }
     .pin:hover .ring,
     .pin:focus-visible .ring  { stroke: var(--pin-hover); }
     .pin:hover text,
@@ -343,21 +343,21 @@
            data-person must match an id on a <template> further down.
            ======================================================== -->
       <g class="pin" data-person="rikke" transform="translate(1064 1116)" tabindex="0" role="button" aria-label="Rikke">
-        <circle class="ring" r="20"/>
-        <circle r="10"/>
-        <text x="26" y="6">Rikke</text>
+        <circle class="ring" r="28"/>
+        <circle r="14"/>
+        <text x="38" y="9">Rikke</text>
       </g>
 
       <g class="pin" data-person="matthew" transform="translate(228 628)" tabindex="0" role="button" aria-label="Matthew">
-        <circle class="ring" r="20"/>
-        <circle r="10"/>
-        <text x="26" y="6">Matthew</text>
+        <circle class="ring" r="28"/>
+        <circle r="14"/>
+        <text x="38" y="9">Matthew</text>
       </g>
 
       <g class="pin" data-person="peter" transform="translate(436 450)" tabindex="0" role="button" aria-label="Peter">
-        <circle class="ring" r="20"/>
-        <circle r="10"/>
-        <text x="26" y="6">Peter</text>
+        <circle class="ring" r="28"/>
+        <circle r="14"/>
+        <text x="38" y="9">Peter</text>
       </g>
     </svg>
   </div>
@@ -382,7 +382,7 @@
   <template id="about">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>About</h2>
-    <p class="job">The project</p>
+    <p class="job">community, craft &amp; nourishment</p>
 
     <img src="images/intro/rom_holder.jpg" alt="Romilly Thomson sitting on a beach at sunset">
 
