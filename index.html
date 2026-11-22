@@ -367,6 +367,47 @@
       margin: 2.5rem auto;
     }
 
+    /* TURN A TALL CLIP SIDEWAYS — wrap the <video> in
+       <div class="clip-rotate"> to show a portrait clip as landscape,
+       the same shape as the other videos. Use -90deg to turn it the
+       other way. */
+    .panel .clip-rotate {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 2.5rem auto;
+      overflow: hidden;
+    }
+    .panel .clip-rotate video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 56.25%;        /* = the box's height, so it fits once turned */
+      height: auto;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    /* ZOOM INTO A CLIP — wrap the <video> in <div class="clip-zoom"> to
+       crop in on it. scale(1.25) trims about a tenth off each side;
+       raise it to crop more, lower it (e.g. 1.15) to crop less. */
+    .panel .clip-zoom {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 2.5rem auto;
+      overflow: hidden;
+    }
+    .panel .clip-zoom video {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      margin: 0;
+      object-fit: cover;
+      transform: scale(1.25);
+    }
+
     /* Clips side by side: wrap the <video> tags in <div class="pair">.
        - They all line up at the same height.
        - Tall phone clips work as-is. For a WIDE clip, add
@@ -399,7 +440,8 @@
     /* The interviewer's questions */
     .panel .q {
       margin: 2.5rem 0 1rem;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: sans-serif;
+      letter-spacing: 0.04em; /* match the answers */
       font-size: 1rem;
       font-weight: 700;
       line-height: 1.5;
@@ -407,7 +449,9 @@
     }
 
     .panel p {
-      font-family: Helvetica, Arial, sans-serif;  /* same font as the questions */
+      /* same font as the subtitle, with slightly tighter letter spacing */
+      font-family: sans-serif;
+      letter-spacing: 0.04em;
       margin: 0 0 1.2em;
       line-height: 1.6;
       font-size: 1.15rem;
@@ -437,7 +481,7 @@
 
   <div class="heading">
     <h1 class="title">tending</h1>
-    <p class="place">how four people sustain their community<br>in Odden, Denmark</p>
+    <p class="place">how four people sustain their community<br>on a changing Danish coast</p>
   </div>
 
   <!-- Two copies of the same clip that cross-fade into each other, so the loop has no visible jump -->
@@ -699,8 +743,7 @@
     <h2>Linda</h2>
     <p class="job">Director, Sjællands Småbådsfiskeklub</p>
 
-    <!-- PHOTOS: put Linda's images in images/linda/ and add them like this, between paragraphs:
-         <img src="images/linda/yourphoto.jpg" alt="Describe the photo"> -->
+    <video src="videos/linda/linda.mp4" autoplay muted loop playsinline></video>
 
     <p class="q">Can you introduce yourself?</p>
     <p>My name is Linda, and I'm 51. I've been fishing competitively for 17 years. I fished a little with my brother when I was a kid, but it was my son who really got me into it, when he was three.</p>
@@ -714,6 +757,8 @@
 
     <p class="q">Are there a lot of fishermen in this region, particularly in Odden?</p>
     <p>There are still some, but not as many as there used to be. Commercial fishing is closing down everywhere. There are a lot of people who fish as a hobby, but many of them are selling their boats too, because it's getting so hard. The oceans have a lot of problems. Many fish are dying, and it's hard to find fish at all. Some species we can't find anymore.</p>
+
+    <video src="videos/linda/linda_ocean.mp4" autoplay muted loop playsinline></video>
 
     <p class="q">Why did you want to put on this festival, the Mackerel Masters? Is part of it about bringing back fishing culture?</p>
     <p>Mackerel is one of the fish that are still plentiful. Just off the point here, and a little further out, there are lots of them. Somehow mackerel survive, and there are so many. The tuna come to Denmark because they eat the mackerel.</p>
@@ -731,11 +776,15 @@
     <p>Actually, my son is one of the favourites. We've won a lot of the earlier competitions up here, including last year's, in a competition that's since closed down. And the boats we usually compete against won't be out on the water this weekend, because they're here in the harbour with me, organising all this.</p>
     <p>So, it's not very nice to say, but yes, I have my son's boat as a favourite. There are also three, four, five teams I know are really good, and lots of teams I've never heard of. They're coming from northern Jutland, from Funen, from all over Denmark.</p>
 
+    <div class="clip-zoom"><video src="videos/linda/linda_weigh.mp4" autoplay muted loop playsinline></video></div>
+
     <p class="q">How do you usually celebrate after winning a competition?</p>
     <p>Not much, honestly, because we're so tired. After fishing all weekend, you just want to go home and sleep. If we celebrate, it's on Saturday night, when all the fishermen are together. We have a nice evening and way too little sleep, then go out again on Sunday. By the time it's over, everyone wants to go home, because they have work on Monday morning. So we really celebrate with the others the night before, before anyone has won.</p>
 
     <p class="q">Will people eat the fish they catch tomorrow?</p>
     <p>No, they take them home. But we have two chefs cooking mackerel on the harbour, to show what you can do with it. You can get tips and have a taste. We're having a festival dinner tomorrow night too, but it isn't mackerel.</p>
+
+    <div class="clip-rotate"><video src="videos/linda/linda_fish.mp4" autoplay muted loop playsinline></video></div>
 
     <p class="q">Do people value eating fish from around here? Are they proud of eating fish from the region, from Denmark?</p>
     <p>Many people are, yes. Personally, I only eat fish I've caught myself. I hardly eat salmon anymore, because farmed salmon get so much medication, and I don't want to eat that. When I catch a fish out there, I don't know exactly what it's eaten, but it isn't medication. So I only eat fish I've caught and cooked myself. It's a real luxury.</p>
