@@ -466,6 +466,13 @@
     }
     .panel p a:hover { color: var(--pin-hover); }
 
+    /* Links in the line under each name — no underline, just a colour
+       change on hover */
+    .panel .job a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
     /* The stories live in hidden <template> tags; this keeps them out of sight */
     .story { display: none; }
 
@@ -561,9 +568,9 @@
   <template id="rikke">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>Rikke</h2>
-    <p class="job">Birkemosegaard</p>
+    <p class="job"><a href="https://birkemosegaard.dk" target="_blank" rel="noopener">Birkemosegaard</a></p>
 
-    <img src="images/rikke/rikkestill.jpg" alt="Rikke at Birkemosegaard">
+    <video src="videos/rikke/rikke_int.mp4" autoplay muted loop playsinline></video>
 
     <p class="q">Could you introduce yourself and talk about what Birkemosegaard is?</p>
     <p>My name is Rikke. I work in communication for the farm. I have a background in design and communication and am really drawn to this organic farming, and working to get better produce out to the customers and get people to be more aware of what good produce should taste like.</p>
@@ -629,7 +636,7 @@
   <template id="matthew">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>Matthew</h2>
-    <p class="job">Kiosken på Odden</p>
+    <p class="job"><a href="https://kioskenpaaodden.com" target="_blank" rel="noopener">Kiosken på Odden</a></p>
 
     <video src="videos/matthew/matttalk.mp4" autoplay muted loop playsinline></video>
 
@@ -679,7 +686,7 @@
   <template id="peter">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>Peter</h2>
-    <p class="job">Vaerftet Paa Odden</p>
+    <p class="job"><a href="https://www.oddenbaade.com" target="_blank" rel="noopener">Vaerftet Paa Odden</a></p>
 
     <p class="q">Can you introduce yourself?</p>
     <p>My name is Peter. I run a shipyard here in Sjaellands Odde. We have a slipway where we can pull up boats that are up to 60 tons, and we do restoration and maintenance on our own fishing fleet that we have here as well as boats that come from other places in Denmark.</p>
@@ -741,9 +748,9 @@
   <template id="linda">
     <svg class="wisp" aria-hidden="true"><path/></svg>
     <h2>Linda</h2>
-    <p class="job">Director, Sjællands Småbådsfiskeklub</p>
+    <p class="job">Director, <a href="https://makrel-master.dk/en/" target="_blank" rel="noopener">Sjællands Småbådsfiskeklub</a></p>
 
-    <video src="videos/linda/linda.mp4" autoplay muted loop playsinline></video>
+    <video src="videos/linda/linda_ocean.mp4" autoplay muted loop playsinline></video>
 
     <p class="q">Can you introduce yourself?</p>
     <p>My name is Linda, and I'm 51. I've been fishing competitively for 17 years. I fished a little with my brother when I was a kid, but it was my son who really got me into it, when he was three.</p>
@@ -758,7 +765,7 @@
     <p class="q">Are there a lot of fishermen in this region, particularly in Odden?</p>
     <p>There are still some, but not as many as there used to be. Commercial fishing is closing down everywhere. There are a lot of people who fish as a hobby, but many of them are selling their boats too, because it's getting so hard. The oceans have a lot of problems. Many fish are dying, and it's hard to find fish at all. Some species we can't find anymore.</p>
 
-    <video src="videos/linda/linda_ocean.mp4" autoplay muted loop playsinline></video>
+    <video src="videos/linda/linda.mp4" autoplay muted loop playsinline></video>
 
     <p class="q">Why did you want to put on this festival, the Mackerel Masters? Is part of it about bringing back fishing culture?</p>
     <p>Mackerel is one of the fish that are still plentiful. Just off the point here, and a little further out, there are lots of them. Somehow mackerel survive, and there are so many. The tuna come to Denmark because they eat the mackerel.</p>
